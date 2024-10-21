@@ -1,0 +1,9 @@
+"Concurrency in C# Cookbook" – Stephen Cleary
+
+"Pro .NET Parallel Programming in C#" – Adam Freeman
+
+"C# 10 and .NET 6 – Modern Cross-Platform Development" – Mark J. Price
+
+"Essential C# 8.0" – Mark Michaelis
+
+"CLR via C#" – Jeffrey Richter
