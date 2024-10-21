@@ -1,4 +1,4 @@
-﻿class Example2
+﻿class Example1
 {
     public class BankAccount
     {
@@ -38,7 +38,7 @@
 
         SpinLock sl = new SpinLock();
 
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
             var tasks = new List<Task>();
             var ba = new BankAccount();
@@ -69,5 +69,44 @@
     }
 }
 
-  
- 
+
+class Example2
+{
+    static SpinLock sl = new SpinLock();
+    public static void LockRecursion(int x)
+    {
+        bool lockTaken = false; // zmienna informująca czy Spinlock jest zajęty
+
+        try
+        {
+            sl.Enter(ref lockTaken); // próba zajęcia Spinlocka
+        }
+        catch (LockRecursionException e)
+        {
+            Console.WriteLine("Error: " + e);
+        }
+        finally
+        {
+            if(lockTaken)
+            {
+                Console.WriteLine($"zdobyto x={x}");
+
+                if (x > 0)
+                {
+                    LockRecursion(x - 1);
+                }
+                sl.Exit();
+            }
+            else
+            {
+                Console.WriteLine($"Cant access x={x}");
+            }
+        }
+
+    }
+
+    static void Main(string[] args)
+    {
+        LockRecursion(5);
+    }
+}

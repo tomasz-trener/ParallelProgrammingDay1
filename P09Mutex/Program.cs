@@ -99,7 +99,7 @@ class Example2
 
         class Program
         {
-            public static void Main(string[] args)
+            public static void Main2(string[] args)
             {
                 var tasks = new List<Task>();
                 var ba = new BankAccount();
@@ -173,4 +173,39 @@ class Example2
           
         }
     }
+}
+
+
+class Example3
+{
+
+
+
+    static void Main()
+    {
+        const string appName = "MyApp";
+
+        Mutex mutex;
+        try
+        {
+            mutex = Mutex.OpenExisting("MyMutex");
+
+            Console.WriteLine($" {appName} is already running");
+            Console.ReadKey();
+            return;
+        }
+        catch (WaitHandleCannotBeOpenedException)
+        {
+            Console.WriteLine("We can run program");
+            mutex = new Mutex(false, "MyMutex");
+        }
+
+        Console.WriteLine("app is running ");
+        Console.ReadKey();
+
+        mutex.ReleaseMutex();
+
+    }
+
+
 }
