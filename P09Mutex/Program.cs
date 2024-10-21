@@ -181,7 +181,7 @@ class Example3
 
 
 
-    static void Main()
+    static void Main3()
     {
         const string appName = "MyApp";
 
@@ -208,4 +208,51 @@ class Example3
     }
 
 
+}
+
+
+
+class Example4
+{
+    public class BankAccount
+    {
+
+        public int Balance { get => _balance; private set => _balance = value; }
+
+        private int _balance;
+
+        Mutex mutex = new Mutex();
+        public void Deposit(int amount)
+        {
+            bool haveLock = mutex.WaitOne();
+            try
+            {
+                _balance += amount;
+
+                if (amount > 0)
+                    Deposit(amount - 10);
+            }
+            finally
+            {
+                if (haveLock) mutex.ReleaseMutex();
+            }  
+
+        }
+     
+       
+
+        class Program
+        {
+            public static void Main(string[] args)
+            {
+               //100, 90, 80...0
+               var ba = new BankAccount();
+                ba.Deposit(100);
+                Console.WriteLine(ba.Balance);
+
+            }
+
+
+        }
+    }
 }
