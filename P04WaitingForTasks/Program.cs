@@ -62,4 +62,13 @@ class Example2
         Console.ReadKey();
 
     }
+
+    // statusy: 
+/*
+ * runing - zadanie jest wykonywane
+ * RanToCompletion - zadanie zostało zakończone
+ * Cancelled - zadanie zostało anulowane
+ * Faulted - zadanie zakończyło się błędem
+ */ 
+
 }
