@@ -52,10 +52,12 @@ class Example1
 
     static void Main()
     {
-        Task.Factory.StartNew(ProduceAndConsume, cts.Token);
+        Task.Factory.StartNew(ProduceAndConsume);
 
         Console.ReadLine();
         cts.Cancel();
+
+        Console.ReadLine();
     }
    
 
