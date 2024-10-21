@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06CriticalSections", "P06C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P07InterlockOperations", "P07InterlockOperations\P07InterlockOperations.csproj", "{BBC55E08-1C9E-40BC-9634-21BD9F7665EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P08SpinLocking", "P08SpinLocking\P08SpinLocking.csproj", "{C3D7A94D-8590-4987-B33F-EF8DDAF1493A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P09Mutex", "P09Mutex\P09Mutex.csproj", "{43AF7604-1100-409F-9934-F74B0136B80C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,14 @@ Global
 		{BBC55E08-1C9E-40BC-9634-21BD9F7665EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBC55E08-1C9E-40BC-9634-21BD9F7665EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBC55E08-1C9E-40BC-9634-21BD9F7665EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D7A94D-8590-4987-B33F-EF8DDAF1493A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D7A94D-8590-4987-B33F-EF8DDAF1493A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D7A94D-8590-4987-B33F-EF8DDAF1493A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D7A94D-8590-4987-B33F-EF8DDAF1493A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43AF7604-1100-409F-9934-F74B0136B80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43AF7604-1100-409F-9934-F74B0136B80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43AF7604-1100-409F-9934-F74B0136B80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43AF7604-1100-409F-9934-F74B0136B80C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

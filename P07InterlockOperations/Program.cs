@@ -62,6 +62,7 @@ class Example3
 
         public void Deposit(int amount)
         {
+            transactionCompleted = false;
             _balance += amount;
 
             Thread.MemoryBarrier();
@@ -75,8 +76,10 @@ class Example3
             {
                 
             }
+          
 
             _balance -= amount;
+          
         }
 
         public static void Main(string[] args)
